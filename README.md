@@ -122,6 +122,8 @@ The penetration testing process is iterative and may require multiple cycles thr
 
 # Practical Example - HTB Cap
 
+Machine Link: https://app.hackthebox.com/machines/Cap
+
 ## Penetration Testing Steps
 
 Let's break down the penetration testing process into clear steps:
