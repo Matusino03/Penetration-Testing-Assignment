@@ -123,6 +123,17 @@ The penetration testing process is iterative and may require multiple cycles thr
 # Practical Example - HTB Cap
 
 Machine Link: https://app.hackthebox.com/machines/Cap
+<aside>
+Machine Difficulty: Easy
+</aside>
+
+## Overview
+
+Cap is a Linux-based machine that exposes vulnerabilities in an HTTP server performing network captures. The main attack vectors involve:
+
+- IDOR (Insecure Direct Object Reference) vulnerability in the capture functionality
+- Plaintext credentials exposed in network captures
+- Linux capability misconfiguration enabling privilege escalation
 
 ## Penetration Testing Steps
 
