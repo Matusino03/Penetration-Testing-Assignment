@@ -32,7 +32,7 @@ Kali Linux is a Debian-derived Linux distribution designed for digital forensics
     - Multi-language support
     - Customizable kernel
 
-[Insert Image: Kali Linux Desktop Environment]
+![[Insert Image: Kali Linux Desktop Environment]](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.kali.org%2Fblog%2Fkali-linux-2020-2-release%2Fimages%2Frelease-2020.2-kali-kde-dark.png&f=1&nofb=1&ipt=582e7f666f9f4fdc95bf727dc41336e103781c64d9f9060be33585d4e16cefa1)
 
 - **Core Tools:**
     - Metasploit Framework
@@ -52,7 +52,7 @@ Parrot Security OS is a Debian-based Linux distribution focused on security, dev
     - Cloud penetration testing tools
     - Anonymous mode
 
-[Insert Image: Parrot OS Desktop Environment]
+![Insert Image: Parrot OS Desktop Environment](https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Flinuxsecurity.com%2Fimages%2Farticles%2Ffeatures%2Fparrot_os.png&f=1&nofb=1&ipt=9db7ff25afabb620d15270095c172ed0776b59304157e8f028fac44735e0afcc)
 
 ### Comparison Table
 
