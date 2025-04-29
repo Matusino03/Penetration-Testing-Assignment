@@ -238,8 +238,9 @@ What these commands do:
 
 - Change our user ID to 0 (root/administrator)
 - Open a new command prompt with full system access
-- 
+
 ![image](https://github.com/user-attachments/assets/49dab389-0b86-44b8-bab5-c94c33d5f84c)
+
 To view the user flag, enter: `cat root/root.txt`
 
 The Machine has been PWNED. Congratulations
