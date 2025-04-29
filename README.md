@@ -155,8 +155,7 @@ We discovered a security weakness: changing the ID in the URL lets us view other
 
 Our next step is methodically examining each packet capture file for useful information.
 
-During our a![image](https://github.com/user-attachments/assets/158dd90e-57cd-4afb-8832-ecef124c0980)
-nalysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
+During our analysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
 
 Since we found SSH running on port 22 earlier, we can try these FTP credentials to log in via SSH.
 
@@ -182,7 +181,7 @@ When we download a Security Snapshot, we get a packet capture file viewable in W
 
 However, we notice the URL pattern `/data/[id]` for captures. By testing `/data/0`, we find an older capture file - this is called an Insecure Direct Object Reference (IDOR) vulnerability.
 
-![image 4](https://github.com/user-attachments/assets/69d87657-5d10-4685-bf11-4ad3333cf273)
+![image](https://github.com/user-attachments/assets/8f4baa7d-5ba4-40d7-8b34-96e5fa2fa861)
 
 Examining this capture in Wireshark reveals unencrypted FTP login credentials: username 'nathan' with password 'Buck3tH4TF0RM3!'. 
 
