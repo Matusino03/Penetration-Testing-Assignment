@@ -142,23 +142,6 @@ We start by running a basic network scan:
 
 ## Step 2: Service Enumeration
 
-We found a Security Snapshot feature with URLs following this pattern:
-
-`/[something]/[id]` where:
-
-- The `[id]` represents the scan number
-- We need to discover what goes in `[something]`
-
-We discovered a security weakness: changing the ID in the URL lets us view other users' scan results.
-
-![image 1](https://github.com/user-attachments/assets/5d52c4bb-ad7e-4ad6-ae7e-3d389649bb93)
-
-Our next step is methodically examining each packet capture file for useful information.
-
-During our analysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
-
-Since we found SSH running on port 22 earlier, we can try these FTP credentials to log in via SSH.
-
 ### FTP
 
 Let's check the FTP service.
@@ -179,11 +162,26 @@ When we download a Security Snapshot, we get a packet capture file viewable in W
 
 ![image 3](https://github.com/user-attachments/assets/d9b61648-39ac-4f31-97e7-c81430b84f22)
 
-However, we notice the URL pattern `/data/[id]` for captures. By testing `/data/0`, we find an older capture file - this is called an Insecure Direct Object Reference (IDOR) vulnerability.
+We found a Security Snapshot feature with URLs following this pattern:
 
-![image](https://github.com/user-attachments/assets/8f4baa7d-5ba4-40d7-8b34-96e5fa2fa861)
+`/[something]/[id]` where:
+
+- The `[id]` represents the scan number
+- We need to discover what goes in `[something]`
+
+We discovered a security weakness: changing the ID in the URL lets us view other users' scan results.
+
+
+Our next step is methodically examining each packet capture file for useful information.
+
+During our analysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
+
+Since we found SSH running on port 22 earlier, we can try these FTP credentials to log in via SSH.
+
+![image 1](https://github.com/user-attachments/assets/5d52c4bb-ad7e-4ad6-ae7e-3d389649bb93)
 
 Examining this capture in Wireshark reveals unencrypted FTP login credentials: username 'nathan' with password 'Buck3tH4TF0RM3!'. 
+
 
 These credentials work for both FTP and SSH access.
 
