@@ -13,7 +13,7 @@ Assignment for Implementation of UNIX-LINUX course focusing on security-oriented
     - Kali Linux
     - Parrot OS
 - [Penetration Testing Fundamentals](#pentesting)
-- [Practical Implementation - HTB Nibbles](#practical)
+- [Practical Implementation - HTB Cap](#practical)
 
 ## Introduction
 
