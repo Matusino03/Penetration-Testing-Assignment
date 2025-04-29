@@ -192,7 +192,7 @@ Now we can try log into the system using SSH:
 ```bash
 ssh nathan@IP
 ```
-
+![image 7](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0f7TknvNvkXjk-2uydADVA@2x.jpeg)
 To view the user flag, enter: `cat user.txt`
 
 # Gaining Administrator Rights
