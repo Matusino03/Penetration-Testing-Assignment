@@ -44,6 +44,7 @@ Kali Linux is a Debian-derived Linux distribution designed for digital forensics
 ### Parrot OS
 
 Parrot Security OS is a Debian-based Linux distribution focused on security, development, and privacy.
+![image](https://github.com/user-attachments/assets/d536d7eb-4bd2-49ff-92a3-522ff4cca4cb)
 
 - **Key Features:**
     - Lightweight system requirements
@@ -205,7 +206,7 @@ Now we can try log into the system using SSH:
 ```bash
 ssh nathan@IP
 ```
-![image 7](https://miro.medium.com/v2/resize:fit:1100/format:webp/1*0f7TknvNvkXjk-2uydADVA@2x.jpeg)
+![image](https://github.com/user-attachments/assets/40811202-2e37-4142-81fe-7a409420cb03)
 To view the user flag, enter: `cat user.txt`
 
 # Gaining Administrator Rights
