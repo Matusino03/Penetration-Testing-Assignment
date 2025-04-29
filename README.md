@@ -1,11 +1,5 @@
 # Penetration Testing Assignment - Linux Distributions and HTB Academy
 
-Reviewed: No
-
-# Linux Security Distributions & Penetration Testing
-
-Assignment for Implementation of UNIX-LINUX course focusing on security-oriented Linux distributions and practical penetration testing.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
