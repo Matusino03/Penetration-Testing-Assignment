@@ -138,6 +138,7 @@ We start by running a basic network scan:
 ```bash
 └─$ nmap -sC -sV 10.10.10.245
 ```
+![image](https://github.com/user-attachments/assets/8f4baa7d-5ba4-40d7-8b34-96e5fa2fa861)
 
 ## Step 2: Service Enumeration
 
@@ -150,11 +151,12 @@ We found a Security Snapshot feature with URLs following this pattern:
 
 We discovered a security weakness: changing the ID in the URL lets us view other users' scan results.
 
-![](image%201.png)
+![image 1](https://github.com/user-attachments/assets/5d52c4bb-ad7e-4ad6-ae7e-3d389649bb93)
 
 Our next step is methodically examining each packet capture file for useful information.
 
-During our analysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
+During our a![image](https://github.com/user-attachments/assets/158dd90e-57cd-4afb-8832-ecef124c0980)
+nalysis, we found login credentials being sent through FTP (which isn't secure as it sends passwords as plain text).
 
 Since we found SSH running on port 22 earlier, we can try these FTP credentials to log in via SSH.
 
@@ -172,15 +174,15 @@ The HTTP server runs Gunicorn (a Python-based server) on port 80. When we visit 
 - Network Status page - displays netstat output
 - Security Snapshot - captures network traffic
 
-![image.png](image%202.png)
+![image 2](https://github.com/user-attachments/assets/9c1151e2-688f-4eb3-b8b7-0d2746f03ca3)
 
 When we download a Security Snapshot, we get a packet capture file viewable in Wireshark. Our own captured traffic shows nothing interesting.
 
-![image.png](image%203.png)
+![image 3](https://github.com/user-attachments/assets/d9b61648-39ac-4f31-97e7-c81430b84f22)
 
 However, we notice the URL pattern `/data/[id]` for captures. By testing `/data/0`, we find an older capture file - this is called an Insecure Direct Object Reference (IDOR) vulnerability.
 
-![image.png](image%204.png)
+![image 4](https://github.com/user-attachments/assets/69d87657-5d10-4685-bf11-4ad3333cf273)
 
 Examining this capture in Wireshark reveals unencrypted FTP login credentials: username 'nathan' with password 'Buck3tH4TF0RM3!'. 
 
@@ -204,7 +206,7 @@ Follow these steps to get full system access:
 2. Create a file called [linpeas.sh](http://linpeas.sh) using `nano linpeas.sh`, copy the LinPEAS code into it, and save
 3. Make the file runnable with `chmod +x linpeas.sh` and run it using `./linpeas.sh`
     
-    ![image.png](image%205.png)
+    ![image 5](https://github.com/user-attachments/assets/edeb49e4-d45c-408a-9aa0-bc500747899f)
     
 4. The scan shows we can use Python3's special permissions to gain administrator access
 
@@ -219,16 +221,9 @@ os.setuid(0)
 os.system('/bin/sh')
 ```
 
-![image.png](image%206.png)
+![image 6](https://github.com/user-attachments/assets/379cf231-1d34-4bff-845b-585349d995a9)
 
 What these commands do:
 
 - Change our user ID to 0 (root/administrator)
 - Open a new command prompt with full system access[Uploading Penetration Testing Assignment - Linux Distributio 1b4de124bd03808bbec6f865faf5e859.md…]()
-
-![image 6](https://github.com/user-attachments/assets/379cf231-1d34-4bff-845b-585349d995a9)
-![image 5](https://github.com/user-attachments/assets/edeb49e4-d45c-408a-9aa0-bc500747899f)
-![image 4](https://github.com/user-attachments/assets/69d87657-5d10-4685-bf11-4ad3333cf273)
-![image 3](https://github.com/user-attachments/assets/d9b61648-39ac-4f31-97e7-c81430b84f22)
-![image 2](https://github.com/user-attachments/assets/9c1151e2-688f-4eb3-b8b7-0d2746f03ca3)
-![image 1](https://github.com/user-attachments/assets/5d52c4bb-ad7e-4ad6-ae7e-3d389649bb93)
